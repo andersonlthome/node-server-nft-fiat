@@ -12,8 +12,6 @@ import * as jose from "jose";
 
 export const jwtSecret = process.env.JWT_SECRET || "secret";
 
-// ? ideia com destroy jwt - redis https://stackoverflow.com/questions/37959945/how-to-destroy-jwt-tokens-on-logout
-
 export function expressAuthentication(
   request: express.Request,
   securityName: string,
