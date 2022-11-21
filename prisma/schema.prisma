@@ -1,0 +1,43 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  // previewFeatures = ["referentialIntegrity"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  // referentialIntegrity = "prisma"
+}
+
+model UserW3A {
+  id           Int      @id @default(autoincrement())
+  verifierId   String   @unique
+  email        String?
+  wallet       String?
+  name         String?
+  typeOfLogin  String?
+  profileImage String?
+  scopes       String[]
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Order {
+  id                  Int      @id @default(autoincrement())
+  orderId             String   @unique
+  userId              String
+  wallet              String
+  tokenID             Int
+  orderStatus         String
+  orderType           String
+  orderFiatAmount     Float
+  orderFiatCurrency   String
+  orderCryptoAmount   Float
+  orderCryptoCurrency String
+  orderDate           DateTime @default(now())
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+}

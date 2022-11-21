@@ -1,0 +1,44 @@
+{
+  "entryFile": "src/main.ts",
+  "controllerPathGlobs": ["./src/controllers/**/*controller.ts"],
+  "noImplicitAdditionalProperties": "throw-on-extras",
+  "swagger": {
+    "entryFile": "./src/main.ts",
+    "specVersion": 3,
+    "outputDirectory": ".",
+    "controllerPathGlobs": ["./src/controllers/**/*controller.ts"]
+  },
+  "spec": {
+    "basePath": "/api/v1",
+    "outputDirectory": "build",
+    "specVersion": 3,
+    "securityDefinitions": {
+      "api_key_web3auth": {
+        "type": "jwks",
+        "name": "authorization",
+        "in": "header"
+      },
+      "api_key": {
+        "type": "jwt",
+        "name": "authorization",
+        "in": "header"
+      },
+      "tsoa_auth": {
+        "type": "oauth2",
+        "authorizationUrl": "http://swagger.io/api/oauth/dialog",
+        "flow": "implicit",
+        "scopes": {
+          "write:user": "modify things",
+          "read:user": "read things"
+        }
+      }
+    }
+  },
+  "routes": {
+    "basePath": "/api/v1",
+    "entryFile": "./src/main.ts",
+    "routesDir": "./src/routes",
+    "middleware": "express",
+    "authenticationModule": "./src/authentication.ts"
+  }
+}
