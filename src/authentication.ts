@@ -1,8 +1,6 @@
 import "dotenv/config";
 import * as express from "express";
-// import * as jwt from "jsonwebtoken";
 import {
-  // UserViewModel,
   UserAuthenticated,
 } from "./interfaces/user";
 import { UserService } from "./services/user.service";

@@ -98,7 +98,7 @@ export function RegisterRoutes(app: express.Router) {
 
 
               const promise = controller.feedback.apply(controller, validatedArgs as any);
-              promiseHandler(controller, promise, response, undefined, next);
+              promiseHandler(controller, promise, response, 200, next);
             } catch (err) {
                 return next(err);
             }
@@ -163,7 +163,6 @@ export function RegisterRoutes(app: express.Router) {
 
             function UsersController_verify(request: any, response: any, next: any) {
             const args = {
-                    requestBody: {"in":"body","name":"requestBody","required":true,"dataType":"any"},
             };
 
             // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
@@ -176,7 +175,7 @@ export function RegisterRoutes(app: express.Router) {
 
 
               const promise = controller.verify.apply(controller, validatedArgs as any);
-              promiseHandler(controller, promise, response, undefined, next);
+              promiseHandler(controller, promise, response, 200, next);
             } catch (err) {
                 return next(err);
             }
