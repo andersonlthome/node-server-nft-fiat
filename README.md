@@ -1,4 +1,4 @@
-## Backend NFT Marketplace with FIAT - NodeJS | Web3Auth | Prisma | Swagger | Thirdweb ERC-721 | MercadoPagoAPI
+## Backend NFT Marketplace with FIAT - NodeJS | Web3Auth | Prisma | Swagger | Thirdweb ERC-721 | MercadoPagoAPI(FIAT)
 
 The goal of this project is to create a backend for a marketplace that allows users to buy NFTs (non-fungible tokens) using their fiat currency, with credit card or pix using MercadoPago API. The marketplace utilizes web3auth for user authentication, allowing users to login with their social account or blockchain wallet.
 
